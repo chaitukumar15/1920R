@@ -18,13 +18,10 @@ http
 os 
 path
 fs 
+............................
+
 2.local modules->
 user defined modules 
-
-
-
-
-
 
 module.exports for export 
 require() for import 
@@ -33,6 +30,8 @@ if u use es6 modules ->
 a. using extention mjs 
 b. or type="module " in pacage.json file
 
+
+...........................................
 3. third party modules :
 
 express , mysql2 , bcrypt , nodemailer , ..... 
