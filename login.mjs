@@ -4,9 +4,7 @@ function hello(){
     return "hi"
 }
 
-module.exports={
 
-a , hello
-};
+export {a,hello} ;
 
 

@@ -35,3 +35,31 @@ b. or type="module " in pacage.json file
 3. third party modules :
 
 express , mysql2 , bcrypt , nodemailer , ..... 
+
+
+...............................................
+
+core modules ->
+ http module -> 
+
+ create a server -> 
+  client ->  -->  req ->server (process the req and provide res)---> res -->client 
+
+var http=require("http");
+
+
+var server=http.createserver((req,res)=>{
+
+res.write()
+
+});
+
+var port=3000;
+server.listen(port,()=>{
+
+})
+
+http://localhost:3000
+
+
+res.write()--> pass a string / instance of buffer 
