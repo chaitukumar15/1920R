@@ -48,7 +48,7 @@ core modules ->
 var http=require("http");
 
 
-var server=http.createserver((req,res)=>{
+var server=http.createserver(( ,res)=>{
 
 res.write()
 
@@ -63,3 +63,22 @@ http://localhost:3000
 
 
 res.write()--> pass a string / instance of buffer 
+
+
+................................................
+
+http methods ->
+HTTP (Hypertext Transfer Protocol) defines a set 
+of request methods to indicate the desired action 
+to be performed on a given resource. These methods 
+are also known as HTTP verbs and are case-sensitive.
+
+crud - create read update delete 
+
+
+get  -> chaitanya getting the data 
+post -> chaitanya posting the data 
+put  -> chaitanya putting the data 
+patch  -> chaitanya patched the data 
+delete -> chaitanya deleted the data 
+
