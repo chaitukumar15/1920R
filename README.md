@@ -190,3 +190,152 @@ process.nextTick(()=>{
 // // data
 
 // ("hello im  set immedate ");
+
+
+......................................................
+
+
+express ->
+
+Express.js is a minimal
+ and flexible web application framework
+ 
+  for Node.js. It provides a robust set of
+   features to develop both web and mobile 
+   applications. Here's a deeper dive into Express.js
+
+   rest apis-> 
+
+   npm i express -> 
+
+
+var express=require("express");
+
+var app = express();
+
+
+app.get("pathname",cb);
+
+
+
+...............
+params:
+
+In web development, params (short for parameters) are values that are passed into a web application through the URL, typically in the form of query parameters or route parameters. They are used to convey information from the client to the server or between different parts of an application. These parameters allow for dynamic content and behavior based on the data sent by the client.
+
+There are several types of parameters commonly used in web development:
+
+1. Route Parameters
+Route parameters are used within the URL path to capture values dynamically and make routes flexible. In a web application, you might define a route with placeholders that represent these parameters.
+Route Parameters:
+Are defined within the route path.
+Allow you to capture and use dynamic data in the URL.
+Are accessed through req.params in Express.js or other server frameworks.
+
+2. Query Parameters
+Query parameters are passed at the end of the URL after a question mark (?) and are used to pass small amounts of data. Query parameters are often used for filtering, pagination, or search.
+
+URL with Query Parameters: /search?query=javascript&limit=10
+
+
+3. Body Parameters (in POST requests)
+When submitting data via a POST request (often used for submitting forms or sending JSON data), parameters are sent in the request body rather than the URL.
+
+In HTML forms, data is often sent as body parameters with application/x-www-form-urlencoded or multipart/form-data encoding.
+In APIs, data is typically sent as JSON or XML in the request body.
+
+Body Parameters:
+Are typically sent in the body of POST, PUT, or PATCH requests.
+Can contain complex data (e.g., objects, arrays).
+Can be accessed through req.body in Express.js.
+
+
+4. Header Parameters
+Header parameters are part of the HTTP request headers. They are often used for passing authentication tokens, content type information, and other meta-data that should not be included in the URL or body.
+
+Header Parameters:
+Are part of the HTTP request headers.
+Are commonly used for authentication, content negotiation, and meta-data.
+
+
+
+
+
+.....................
+
+query params :-> 
+
+http://localhost:3000/pro/?cat=m&rat=htl
+
+m-men 
+w-women 
+e-ele
+j-jew
+
+
+
+
+................................
+var a="";
+req.on("data",(chunk)=>{
+
+a+=chunk
+
+})
+req.on("end",()=>{
+
+log(a)
+
+})
+
+
+in express we will get data in req.body
+
+function (req, res, next) {
+  var body = "";
+  req.on("data", (chunk) => {
+    body += chunk;
+  });
+
+  req.on("end", () => {
+    console.log(body);
+
+    req.body = body;
+    next();
+  });
+
+  console.log(":hi this is middle ware");
+}
+
+
+
+express.json()
+
+var express={
+
+
+json:funvtion(){
+
+
+return (function (req, res, next) {
+  var body = "";
+  req.on("data", (chunk) => {
+    body += chunk;
+  });
+
+  req.on("end", () => {
+    console.log(body);
+
+    req.body = body;
+    next();
+  });
+
+  console.log(":hi this is middle ware");
+})
+}
+
+}
+
+
+
+
