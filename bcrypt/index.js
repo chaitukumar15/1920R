@@ -2,6 +2,7 @@ var express = require("express");
 var bcrypt = require("bcrypt");
 var fs = require("fs");
 var app = express();
+var jwt=require("jsonwebtoken");
 
 // to get the raw data from the body
 app.use(express.json());
@@ -16,10 +17,16 @@ app.post("/register", (req, res) => {
   }
 
   bcrypt.hash(req.body.password, salt, (err, hash) => {
+
+    var pre="abcdefghijklmn0123456789"
+    var token=jwt.sign(req.body,pre)
+     
+
     console.log(hash);
     req.body.password = hash;
     req.body.otp = otp;
     req.body.checkedotp = 0;
+    req.body.token=token;
 
     fs.writeFile(
       "bcrypt/index.json",
@@ -35,6 +42,7 @@ app.post("/register", (req, res) => {
         } else {
           res.send({
             res: "resgsier successful",
+            wri:req.body,
             statuscode: 201,
           });
         }
@@ -74,6 +82,17 @@ app.post("/otp", (req, res) => {
 
 
 app.post("/login", (req, res) => {
+
+    const token = req.headers['authorization']?.split(' ')[1]; 
+
+    console.log(token);
+var gg="abcdefghijklmn0123456789"
+    
+const decoded = jwt.verify(token, gg);
+console.log(decoded);
+
+
+    
 
     fs.readFile("bcrypt/index.json","utf-8",(err,data)=>{
 
