@@ -338,4 +338,12 @@ return (function (req, res, next) {
 
 
 
+........................
 
+1.mail 
+2. manage ur account 
+3.security 
+4. enable two factor vetification 
+5.serch lo app password 
+6.app name 
+7. generate the app password
