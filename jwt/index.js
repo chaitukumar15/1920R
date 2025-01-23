@@ -10,7 +10,7 @@ const { log } = require("console");
 var seckey = "abcgdeghijklmnopqrst0123456789";
 
 var cors=require("cors")
-app.use(cors())
+app.use(cors());
 
 // const secretKey = crypto.randomBytes(32).toString('hex');
 

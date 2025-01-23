@@ -1,0 +1,16 @@
+What is a Cookie?
+A cookie is a small piece of data that is sent from the server and stored in the browser. It contains key-value pairs and is usually used for storing information like user preferences, authentication tokens, session IDs, etc.
+
+
+What Does cookie-parser Do?
+cookie-parser takes the cookies from the incoming HTTP request (the req.headers.cookie string) and converts it into a JavaScript object that can be easily accessed and modified in your code.
+
+res.cookie('user', 'JohnDoe', { 
+    maxAge: 900000, 
+    httpOnly: true, 
+    secure: true,  // Only sent over HTTPS
+    sameSite: 'Strict'  // Prevents cookie from being sent with cross-site requests
+})
+
+
+res.cookie('user', 'JohnDoe', { maxAge: 900000, httpOnly: true });

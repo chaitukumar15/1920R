@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <form action="http://localhost:3008/reg" method="post" enctype="text/plain">       
+        <input type="text" name="username">
+
+        <input type="text" name="password">
+
+        <input type="text" name="email">
+
+        <h1 value="hello">hello hi this is in the target </h1>
+
+        <input type="text"  name="role">
+
+        <input type="file" value="file">
+
+        <input type="submit" value="register">
+
+    </form>
+
+
+
+
+<!-- <script>
+
+
+
+
+var forms=document.forms[0];
+
+forms.addEventListener("submit",(event)=>{
+   event.preventDefault()
+    console.log(event);
+
+
+    var obj={
+
+        username:event.target[0].value,
+        password:event.target[1].value,
+        email:event.target[2].value,
+        role:event.target[3].value
+    }
+    
+
+    fetch("http://localhost:3008/reg",{
+        method:"POST",
+        headers:{
+            "content-type":"application/json",
+            // "authorization":"barer token"
+        },
+        body:JSON.stringify(obj)
+    }).then((res)=>{
+
+       return  res.json()
+    }).then((res)=>{
+
+        console.log(res);
+        
+    })
+
+    
+})
+
+
+
+
+
+    </script> -->
+
+
+</body>
+</html>
