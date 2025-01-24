@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<form id="myForm"  method="post" enctype="multipart/form-data">
+    <input type="text" name="username" required>
+    <input type="password" name="password" required>
+    <input type="file" multiple name="hh" required>
+    <input type="submit" value="submit">
+</form>
+
+<script>
+// Make sure to get the form by ID
+var form = document.getElementById('myForm');
+
+// Listen for form submission
+form.addEventListener("submit", async (e) => {
+    e.preventDefault();  // Prevent the form from submitting the traditional way
+
+
+
+    var formData = new FormData(form);
+
+    try {
+        const res = await fetch("http://localhost:3009/reg", {
+            method: "POST",
+            body: formData
+        });
+
+        const data = await res.json();  // Parse the JSON response
+        console.log(data);  // Log the response to the console
+    } catch (error) {
+        console.error("Error:", error);  // Log any errors if the fetch fails
+    }
+});
+
+</script>
+
+</body>
+</html>

@@ -6,6 +6,10 @@ var multer = require("multer");
 
 app.use(express.json());
 
+var cors=require("cors")
+
+app.use(cors())
+
 app.use(express.urlencoded({ extended: true }));
 
 console.log(__dirname, "dirname");
@@ -26,6 +30,12 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage });
 
 app.post("/reg", upload.array("hh", 3), (req, res) => {
+
+    console.log({
+        file: req.files,
+        body: req.body,
+      });
+    
   res.send({
     file: req.files,
     body: req.body,

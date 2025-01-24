@@ -1,11 +1,16 @@
 var mysql2=require("mysql2");
 
+require("dotenv").config()
+
+console.log(process.env);
+
+
 var connection=mysql2.createConnection({
 
-    host:"localhost",
-    user:"root",
-    password:"chaitu1504",
-    database:"dummy"
+    host:process.env.host,
+    user:process.env.user,
+    password:process.env.password,
+    database:process.env.database
 
 })
 
